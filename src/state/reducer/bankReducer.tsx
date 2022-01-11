@@ -1,0 +1,19 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { ActionTypes } from "../action-types";
+import { Action } from "../actions/index"
+
+const initialState = 0
+const reducer = (state: number = initialState, action: Action) => {
+   switch(action.type){
+       case ActionTypes.DEPOSIT:
+           return state + action.payload;
+           case ActionTypes.WITHDRAWAL:
+               return state - action.payload;
+               case ActionTypes.BANKRUPT:
+                   return 0;
+                   default:
+                       return state
+   }
+}
+
+export default reducer;
